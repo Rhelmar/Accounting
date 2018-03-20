@@ -31,8 +31,6 @@ namespace Accounting
 
         private void NewClick(object sender, RoutedEventArgs e)
         {
-            bank_account BankWindow = new bank_account();
-            BankWindow.Show();
            /* this.Hide();
             MainWindow window = new MainWindow();
             window.Show();
