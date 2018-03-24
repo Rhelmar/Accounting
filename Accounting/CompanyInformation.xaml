@@ -13,7 +13,7 @@
             <RowDefinition MinHeight="40" Height="40*"/>
             <RowDefinition MinHeight="40" Height="40*"/>
             <RowDefinition MinHeight="40" Height="40*"/>
-            <RowDefinition MinHeight="40" Height="40*"/>
+            <RowDefinition MinHeight="40" Height="40*" />
             <RowDefinition MinHeight="40" Height="40*"/>
             <RowDefinition MinHeight="40" Height="40*"/>
             <RowDefinition MinHeight="40" Height="40*"/>
