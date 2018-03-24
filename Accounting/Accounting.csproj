@@ -61,10 +61,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CompanyConfiguration.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="CompanyInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -82,9 +78,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Company.cs" />
-    <Compile Include="CompanyConfiguration.xaml.cs">
-      <DependentUpon>CompanyConfiguration.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CompanyInformation.xaml.cs">
       <DependentUpon>CompanyInformation.xaml</DependentUpon>
     </Compile>
