@@ -8,12 +8,18 @@ namespace Accounting
 {
     class Company
     {
-        public string currency;
-        public string name;
+        private string currency;    
+        private string name;
         private string phonenumber;
         private string email;
         private string contactperson;
         private string companyadress;
         private string websiteurl;
+
+
+        public bool GetData() {
+            
+            return false;
+        }
     }
 }

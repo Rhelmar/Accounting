@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Accounting"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="Booking" Height="300" Width="300">
     <Grid>
         <ComboBox x:Name="Target"  IsEditable="True" IsReadOnly="True" Text="Target Account" Width="120"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20"/>
