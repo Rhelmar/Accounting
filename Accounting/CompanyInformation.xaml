@@ -26,7 +26,7 @@
         <ComboBox Name="CurrencyBox" TabIndex="2" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,15,10,10" Width="90" />
 
         <Label Name="NameLabel" Grid.Row="1" Grid.Column="0" TabIndex="3"  Target="{Binding ElementName=NameTextBox}" Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0" Width="87" RenderTransformOrigin="0.093,0.391" Grid.ColumnSpan="2"/>
-        <TextBox Name="NameTextBox" Grid.Row="1" Grid.Column="1"  TabIndex="4" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="10,15,10,10"  TextWrapping="Wrap" />
+        <TextBox Name="NameTextBox" Grid.Row="1" Grid.Column="1"  TabIndex="4" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="10,15,10,10"  TextWrapping="Wrap"/>
 
         <Label Name="AdressLabel" Grid.Row="2" Grid.Column="0"  TabIndex="5" Content="Adress" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0" Width="87" RenderTransformOrigin="0.773,0.516"/>
         <TextBox Name="AdressTextBox" Grid.Row="2" Grid.Column="1"  TabIndex="6" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="10,15,10,10"  TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"/>
