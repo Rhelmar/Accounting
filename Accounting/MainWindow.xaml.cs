@@ -24,7 +24,6 @@ namespace Accounting
         {
             InitializeComponent();
             MyCommand.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control));
-            this.WindowState = WindowState.Maximized;
             Booking booking = new Booking();
             booking.Show();
         }
@@ -48,14 +47,6 @@ namespace Accounting
                 MessageBox.Show("Content saved");
             }
         }
-
-        private void OnSizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            MainContent.Width = Plutos.ActualWidth - (Plutos.ActualWidth * 0.07);
-            MainContent.Height = Plutos.ActualHeight - (Plutos.ActualHeight * 0.07);
-            MainContent.Margin = new Thickness(Plutos.ActualWidth * 0.07, Plutos.ActualHeight * 0.07,0,0);
-        }
-
         private void NewCompany(object sender, RoutedEventArgs e)
         {
             companySettings = new CompanySettings();
