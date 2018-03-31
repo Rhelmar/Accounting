@@ -19,7 +19,6 @@ namespace Accounting
     /// </summary>
     public partial class Booking : Window
     {
-        
         public Booking()
         {
             InitializeComponent();

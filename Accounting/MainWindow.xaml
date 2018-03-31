@@ -6,15 +6,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Accounting"
         mc:Ignorable="d"
-        Title="Plutos" MinHeight="350" MinWidth="400"  Height="420" Width="480" KeyDown="OnPreviewKeyDown">
-    <Grid>
-        <DockPanel LastChildFill="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <Menu DockPanel.Dock="Top" Background="Gray">
+        Title="MainWindow" MinHeight="325" MinWidth="525"  Height="325" Width="525" KeyDown="OnPreviewKeyDown" SizeChanged="OnSizeChanged" >
+
+    <Grid Background="Yellow">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="189*"/>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="270*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.ColumnSpan="3" Margin="0,0,0.4,-0.2">
+            <Menu DockPanel.Dock="Top" >
                 <MenuItem Header="File">
                     <MenuItem Header="New">
                         <MenuItem Header="Company" Click="NewCompany"/>
                         <MenuItem Header="Account"/>
-                        <MenuItem Header="Booking" Click="NewBooking"/>
                     </MenuItem>
                     <MenuItem Header="Open" />
                     <MenuItem Header="Import" />
@@ -24,14 +29,13 @@
                     <Separator />
                     <MenuItem Header="Close"/>
                 </MenuItem>
+                <MenuItem Header="View">
+                    <MenuItem Header="Search" />
+                </MenuItem>
             </Menu>
-            <StackPanel MinWidth="50" >
-                <Button Height="30" Margin="0,20" Content="Company" FontSize="10" Background="#30C2FF"/>
-                <Button Height="30" Content="Account" FontSize="10" Background="#FFFF66"/>
-            </StackPanel>
-            <Frame x:Name="MainContent" Background="Green" DockPanel.Dock="Left" >
-
-            </Frame>
         </DockPanel>
+        <Frame x:Name="MainContent" Background="Gray"  HorizontalAlignment="Left" Grid.ColumnSpan="3" Margin="68,41,0,0.2" Width="450">
+
+        </Frame>
     </Grid>
 </Window>

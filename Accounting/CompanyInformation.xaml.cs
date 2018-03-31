@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Accounting
 {
     /// <summary>
@@ -22,7 +23,13 @@ namespace Accounting
     {
         public CompanyInformation()
         {
-            InitializeComponent();   
+            InitializeComponent();
+            
+        }
+
+        private void OnSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            CompanySettings companySettings = new CompanySettings();
         }
     }
 }

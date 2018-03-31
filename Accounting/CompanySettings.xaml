@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Accounting"
         mc:Ignorable="d"
         
-        Title="Company" Height="490" Width="560" MinHeight="420" MinWidth="480" ResizeMode="CanResizeWithGrip" Closing="SettingsClosing" >
+        Title="Company" Height="490" Width="560" MinHeight="420" MinWidth="480" ResizeMode="CanResizeWithGrip">
     <Grid>
-        <Frame x:Name="SettingContent" />
+        <Frame x:Name="SettingContent"/>
     </Grid>
 </Window>
