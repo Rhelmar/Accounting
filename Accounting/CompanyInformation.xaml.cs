@@ -24,5 +24,26 @@ namespace Accounting
         {
             InitializeComponent();   
         }
+
+        private void NewCompany(object sender, RoutedEventArgs e)
+        {
+            Company company = new Company();
+            foreach(var child in MainGrid.Children)
+            {
+                if(child is TextBox)    // is == Operator for classes
+                {
+                   var Textbox = child as TextBox; // Convert child to textbox 
+                   if(!company.GetData(Textbox.Name,Textbox.Text))
+                   {
+                        MessageBox.Show("GetData function failed");
+                        return;
+                   }
+                }
+            }
+
+            Company.companies.Add(company);
+            company = null;
+            AppWindows.companySettings.Close();
+        }
     }
 }

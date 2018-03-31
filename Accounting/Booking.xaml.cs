@@ -24,8 +24,8 @@ namespace Accounting
         {
             InitializeComponent();
             string[] bs = new string[3]{"1","2","3" };
-            Target.ItemsSource = bs;
-            Payment.ItemsSource = bs;
+            target.ItemsSource = bs;
+            payment.ItemsSource = bs;
             amount.Text = "Enter Amount...";
             name.Text = "Name of Recipient...";
         }
@@ -55,6 +55,21 @@ namespace Accounting
         private void CloseWindow(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void ClosingBooking(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //if(Controlelements.count.text >= 0) {
+            if (MessageBox.Show("Close Booking?", "Plutos", MessageBoxButton.YesNo, MessageBoxImage.None) == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                // Yes
+                e.Cancel = false;
+                AppWindows.booking = null;
+            }
         }
     }
 }

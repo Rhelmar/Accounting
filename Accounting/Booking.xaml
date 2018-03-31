@@ -6,15 +6,15 @@
         xmlns:local="clr-namespace:Accounting"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Booking" Height="300" Width="300">
+        Title="Booking" Height="300" Width="400" Closing="ClosingBooking" MinHeight="240" MinWidth="320" >
     <Grid>
-        <ComboBox x:Name="Target"  IsEditable="True" IsReadOnly="True" Text="Target Account" Width="120"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20"/>
-        <ComboBox x:Name="Payment"  IsEditable="True" IsReadOnly="True" Text="Payment Account" Width="120"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,60"/>
+        <ComboBox x:Name="target"  IsEditable="True" IsReadOnly="True" Text="Target Account" Width="120"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20"/>
+        <ComboBox x:Name="payment"  IsEditable="True" IsReadOnly="True" Text="Payment Account" Width="120"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,60"/>
         <TextBox x:Name="amount" Width="120" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,40,20,0" GotFocus="GotFocusTextBox" LostFocus="LostFocusTextBox" Tag="Enter Amount..."/>
         <TextBox x:Name="name" IsEnabled="{Binding ElementName=purchaseOrder, Path=IsChecked}" Width="120" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,110,0,0" GotFocus="GotFocusTextBox" LostFocus="LostFocusTextBox" Tag="Name of Recipient..."/>
         <CheckBox x:Name="purchaseOrder" Content="Purchase Order" IsChecked="True" VerticalAlignment="Top" Margin="20,90"/>
         <TextBox x:Name="description" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"  Width="160" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,140,20,0" GotFocus="GotFocusTextBox" LostFocus="LostFocusTextBox" Tag="Enter Description..."/>
-        <Button x:Name="cancelButton" Content="Cancel" Width="80" Height="20" Background="IndianRed" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20" Click="CloseWindow"/>
-        <Button x:Name ="confirmButton" Content="Confirm" Width="80" Height="20" Background="LightGreen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="CloseWindow"/>
+        <Button x:Name="cancelButton" Content="Cancel" Width="80" Height="20" Background="#cc0000" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20" Click="CloseWindow"/>
+        <Button x:Name ="confirmButton" Content="Confirm" Width="80" Height="20" Background="#00b300" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="CloseWindow"/>
     </Grid>
 </Window>
