@@ -20,12 +20,12 @@ namespace Accounting
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Sortierfunktion
+        //Mitarbeiterkonfiguration
         public MainWindow()
         {
             InitializeComponent();
             MyCommand.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control));
-            Booking booking = new Booking();
-            booking.Show();
         }
 
         public static RoutedCommand MyCommand = new RoutedCommand();
@@ -47,10 +47,17 @@ namespace Accounting
                 MessageBox.Show("Content saved");
             }
         }
+
         private void NewCompany(object sender, RoutedEventArgs e)
         {
             companySettings = new CompanySettings();
             companySettings.Show();
+        }
+
+        private void NewBooking(object sender, RoutedEventArgs e)
+        {
+            Booking booking = new Booking();
+            booking.Show();
         }
     }
 }

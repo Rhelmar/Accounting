@@ -16,13 +16,13 @@ using System.Windows.Shapes;
 namespace Accounting
 {
     /// <summary>
-    /// Interaktionslogik für CompanyInformation.xaml
+    /// Interaktionslogik für CompanyList.xaml
     /// </summary>
-    public partial class CompanyInformation : Page
+    public partial class CompanyList : Page
     {
-        public CompanyInformation()
+        public CompanyList()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
     }
 }

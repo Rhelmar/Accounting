@@ -23,6 +23,25 @@ namespace Accounting
         {
             InitializeComponent();
             SettingContent.Content = new CompanyInformation();
+            MessageBox.Show(Application.Current.MainWindow.OwnedWindows.Count.ToString());
+        }
+
+        private void SettingsClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (MessageBox.Show("Close Window?", "Plutos", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            {
+                // No
+                MessageBox.Show(Application.Current.MainWindow.OwnedWindows.Count.ToString());
+                e.Cancel = false;
+            }
+            else
+            {
+                // Yes
+                e.Cancel = false;
+                MessageBox.Show(Application.Current.MainWindow.OwnedWindows.Count.ToString());
+            }
+
+
         }
     }
 }
