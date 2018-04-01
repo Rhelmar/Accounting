@@ -42,7 +42,7 @@
             </Border>
             <Border Margin="10, 40, 10, 10">
                 <Border.Effect>
-                    <DropShadowEffect BlurRadius="16" Direction="-75" ShadowDepth="4"/>
+                    <DropShadowEffect BlurRadius="15" Direction="-75" ShadowDepth="4"/>
                 </Border.Effect>
                 <Frame x:Name="MainContent" DockPanel.Dock="Left" Background="White"/>
             </Border>
