@@ -8,31 +8,44 @@
         mc:Ignorable="d"
         Title="Plutos" MinHeight="350" MinWidth="400"  Height="420" Width="480" KeyDown="OnPreviewKeyDown">
     <Grid>
-        <DockPanel LastChildFill="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <Menu DockPanel.Dock="Top" Background="Gray">
-                <MenuItem Header="File">
-                    <MenuItem Header="New">
-                        <MenuItem Header="Company" Click="NewCompany"/>
-                        <MenuItem Header="Account"/>
-                        <MenuItem Header="Booking" Click="NewBooking"/>
+        <DockPanel LastChildFill="True" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
+            <Border Background="Black" Margin="0,0,0,369">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.5"/>
+                </Border.Effect>
+                <Menu DockPanel.Dock="Top" Background="White">
+                    <MenuItem Header="File" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <MenuItem Header="New">
+                            <MenuItem Header="Company" Click="NewCompany"/>
+                            <MenuItem Header="Account"/>
+                            <MenuItem Header="Booking" Click="NewBooking"/>
+                        </MenuItem>
+                        <MenuItem Header="Open" />
+                        <MenuItem Header="Import" />
+                        <Separator />
+                        <MenuItem Header="Save" />
+                        <MenuItem Header="Save As" />
+                        <Separator />
+                        <MenuItem Header="Close"/>
                     </MenuItem>
-                    <MenuItem Header="Open" />
-                    <MenuItem Header="Import" />
-                    <Separator />
-                    <MenuItem Header="Save" />
-                    <MenuItem Header="Save As" />
-                    <Separator />
-                    <MenuItem Header="Close"/>
-                </MenuItem>
-            </Menu>
-            <StackPanel MinWidth="50" >
-                <Button Height="30" Margin="0,10" Content="Company" FontSize="10" Background="#30C2FF"/>
-                <Button Height="30" Content="Account" FontSize="10" Background="#FFFF66"/>
-                <Button Height="30" Margin="0,10" Content="Booking" FontSize="10" Background="#00b300" Click="NewBooking"/>
-            </StackPanel>
-            <Frame x:Name="MainContent" Background="Black" DockPanel.Dock="Left" >
-
-            </Frame>
+                </Menu>
+            </Border>
+            <Border DockPanel.Dock="Left">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="-75" ShadowDepth="4"/>
+                </Border.Effect>
+                <StackPanel MinWidth="50">
+                    <Button Height="30" Margin="0,10" Content="Company" FontSize="10" Background="White"/>
+                    <Button Height="30" Content="Account" FontSize="10" Background="White"/>
+                    <Button Height="30" Margin="0,10" Content="Booking" FontSize="10" Click="NewBooking" Background="White"/>
+                </StackPanel>
+            </Border>
+            <Border Margin="10, 40, 10, 10">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="-75" ShadowDepth="4"/>
+                </Border.Effect>
+                <Frame x:Name="MainContent" DockPanel.Dock="Left" Background="White"/>
+            </Border>
         </DockPanel>
     </Grid>
 </Window>
