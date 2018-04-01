@@ -23,25 +23,22 @@ namespace Accounting
         {
             InitializeComponent();
             SettingContent.Content = new CompanyInformation();
-            MessageBox.Show(Application.Current.MainWindow.OwnedWindows.Count.ToString());
         }
 
         private void SettingsClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (MessageBox.Show("Close Window?", "Plutos", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            //if(Controlselements.count.text >= 0) {
+            if (MessageBox.Show("Close company setup?", "Plutos", MessageBoxButton.YesNo, MessageBoxImage.None) == MessageBoxResult.No)
             {
                 // No
-                MessageBox.Show(Application.Current.MainWindow.OwnedWindows.Count.ToString());
-                e.Cancel = false;
+                e.Cancel = true;
             }
             else
             {
                 // Yes
+                AppWindows.companySettings = null;
                 e.Cancel = false;
-                MessageBox.Show(Application.Current.MainWindow.OwnedWindows.Count.ToString());
             }
-
-
         }
     }
 }

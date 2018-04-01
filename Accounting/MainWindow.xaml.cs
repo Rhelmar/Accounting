@@ -50,14 +50,20 @@ namespace Accounting
 
         private void NewCompany(object sender, RoutedEventArgs e)
         {
-            companySettings = new CompanySettings();
-            companySettings.Show();
+            if (AppWindows.companySettings == null)
+            {
+                AppWindows.companySettings = new CompanySettings();
+                AppWindows.companySettings.Show();
+            }
         }
 
         private void NewBooking(object sender, RoutedEventArgs e)
         {
-            Booking booking = new Booking();
-            booking.Show();
+            if (AppWindows.booking == null)
+            {
+                AppWindows.booking = new Booking();
+                AppWindows.booking.Show();
+            }
         }
     }
 }

@@ -7,9 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="420" d:DesignWidth="480" 
       Title="New Company" >
-
-    <Grid Background="White">
+    <Grid Background="White" Name="MainGrid">
         <Grid.RowDefinitions>
+            <RowDefinition MinHeight="40" Height="40*"/>
+            <RowDefinition MinHeight="40" Height="40*"/>
             <RowDefinition MinHeight="40" Height="40*"/>
             <RowDefinition MinHeight="40" Height="40*"/>
             <RowDefinition MinHeight="40" Height="40*"/>
@@ -42,5 +43,12 @@
 
         <Label Name="WebsiteLabel" Grid.Row="6" Grid.Column="0"  TabIndex="13" Content="Website URL" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0" Width="87"/>
         <TextBox Name="WebsiteTextBox" Grid.Row="6"  TabIndex="14" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="10,15,10,10" Grid.Column="1"/>
+
+        <Label Name="EmployeesLabel" Grid.Row="7" Grid.Column="0"  TabIndex="15" Content="Website URL" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0" Width="87"/>
+        <TextBox Name="EmployeesTextBox" Grid.Row="7"  TabIndex="16" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="10,15,10,10" Grid.Column="1"/>
+
+        <Button Height="20" Width="100" Grid.Row="8" Grid.Column="0" Content="Cancel" Background="#cc0000"/>
+        <Button Height="20" Width="100" Grid.Row="8" Grid.Column="1" Content="Next" Background="#00b300" HorizontalAlignment="Right" Margin="10,15,10,10" Click="NewCompany"/>
     </Grid>
+    
 </Page>
