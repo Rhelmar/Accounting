@@ -8,31 +8,54 @@
         mc:Ignorable="d"
         Title="Plutos" MinHeight="350" MinWidth="400"  Height="420" Width="480" KeyDown="OnPreviewKeyDown">
     <Grid>
-        <DockPanel LastChildFill="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <Menu DockPanel.Dock="Top" Background="Gray">
-                <MenuItem Header="File">
-                    <MenuItem Header="New">
-                        <MenuItem Header="Company" Click="NewCompany"/>
-                        <MenuItem Header="Account"/>
-                        <MenuItem Header="Booking" Click="NewBooking"/>
-                    </MenuItem>
-                    <MenuItem Header="Open" />
-                    <MenuItem Header="Import" />
-                    <Separator />
-                    <MenuItem Header="Save" />
-                    <MenuItem Header="Save As" />
-                    <Separator />
-                    <MenuItem Header="Close"/>
-                </MenuItem>
-            </Menu>
-            <StackPanel MinWidth="50" >
-                <Button Height="30" Margin="0,10" Content="Company" FontSize="10" Background="#30C2FF"/>
-                <Button Height="30" Content="Account" FontSize="10" Background="#FFFF66"/>
-                <Button Height="30" Margin="0,10" Content="Booking" FontSize="10" Background="#00b300" Click="NewBooking"/>
-            </StackPanel>
-            <Frame x:Name="MainContent" Background="Black" DockPanel.Dock="Left" >
-
-            </Frame>
+        <DockPanel>
+            <Canvas Margin="0,10">
+                <StackPanel Background="Gray" Width="100" Margin="-47,0,0,0">
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-47,0,0,0" To="0,0,0,0" DecelerationRatio=".9" Duration="0:0:1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,0" To="-47,0,0,0" DecelerationRatio=".9" Duration="0:0:1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style>
+                    <DockPanel VerticalAlignment="Center" Margin="0,5">
+                        <Label Content="Home" Foreground="White" VerticalAlignment="Center"/>
+                        <Image Source="Icons/home.png" Width="30" Height="30"/>
+                    </DockPanel>
+                    <DockPanel VerticalAlignment="Center" >
+                        <Label Content="Home" VerticalAlignment="Center" Foreground="White"/>
+                        <Image Source="Icons/home.png" Width="30" Height="30"/>
+                    </DockPanel>
+                    <DockPanel VerticalAlignment="Center" >
+                        <Label Content="Home" VerticalAlignment="Center" Foreground="White"/>
+                        <Image Source="Icons/home.png" Width="30" Height="30"/>
+                    </DockPanel>
+                    <DockPanel VerticalAlignment="Center" >
+                        <Label Content="Home" VerticalAlignment="Center" Foreground="White"/>
+                        <Image Source="Icons/home.png" Width="30" Height="30"/>
+                    </DockPanel>
+                    <DockPanel VerticalAlignment="Center" >
+                        <Label Content="Home" VerticalAlignment="Center" Foreground="White"/>
+                        <Image Source="Icons/home.png" Width="30" Height="30"/>
+                    </DockPanel>
+                    
+                </StackPanel>
+                <Border Background="Black">
+                </Border>
+            </Canvas>
         </DockPanel>
     </Grid>
 </Window>
