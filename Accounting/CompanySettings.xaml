@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:Accounting"
         mc:Ignorable="d"
         
-        Title="Company" Height="490" Width="560" MinHeight="420" MinWidth="480" ResizeMode="CanResizeWithGrip" Closing="SettingsClosing" >
-    <Grid>
-        <Frame x:Name="SettingContent" />
-    </Grid>
+        Title="Company" Height="500" Width="560" MinHeight="500" MinWidth="560" ResizeMode="CanResizeWithGrip" Closing="SettingsClosing" >
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Bottom">
+            <Button Height="20" Width="100" HorizontalAlignment="Left" Margin="30,10" Content="Cancel" Background="#cc0000"/>
+            <Button Height="20" Width="100"  Content="Next" Background="#00b300" HorizontalAlignment="Right" Margin="30,10"/>
+        </Grid>
+        <Frame x:Name="SettingContent" DockPanel.Dock="Top"/>
+    </DockPanel>
 </Window>

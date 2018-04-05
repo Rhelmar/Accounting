@@ -5,34 +5,78 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Accounting"
+        xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Plutos" MinHeight="350" MinWidth="400"  Height="420" Width="480" KeyDown="OnPreviewKeyDown">
-    <Grid>
-        <DockPanel LastChildFill="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
-            <Menu DockPanel.Dock="Top" Background="Gray">
-                <MenuItem Header="File">
-                    <MenuItem Header="New">
-                        <MenuItem Header="Company" Click="NewCompany"/>
-                        <MenuItem Header="Account"/>
-                        <MenuItem Header="Booking" Click="NewBooking"/>
-                    </MenuItem>
-                    <MenuItem Header="Open" />
-                    <MenuItem Header="Import" />
-                    <Separator />
-                    <MenuItem Header="Save" />
-                    <MenuItem Header="Save As" />
-                    <Separator />
-                    <MenuItem Header="Close"/>
-                </MenuItem>
-            </Menu>
-            <StackPanel MinWidth="50" >
-                <Button Height="30" Margin="0,10" Content="Company" FontSize="10" Background="#30C2FF"/>
-                <Button Height="30" Content="Account" FontSize="10" Background="#FFFF66"/>
-                <Button Height="30" Margin="0,10" Content="Booking" FontSize="10" Background="#00b300" Click="NewBooking"/>
-            </StackPanel>
-            <Frame x:Name="MainContent" Background="Black" DockPanel.Dock="Left" >
+        Title="Plutos" MinHeight="350" MinWidth="400"  Height="420" Width="480" KeyDown="OnPreviewKeyDown" WindowStartupLocation="CenterScreen" Background="White">
 
-            </Frame>
-        </DockPanel>
-    </Grid>
+    <Window.Resources>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.75" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <DockPanel >
+        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#333333">
+            <StackPanel>
+                <Grid Height="150" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Button x:Name="ButtonOpenMenu" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonOpenMenu_Click">
+                        <materialdesign:PackIcon Kind="Menu" Width="25" Height="25" Foreground="White"/>
+                    </Button>
+                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCloseMenu_Click">
+                        <materialdesign:PackIcon Kind="ArrowLeft" Width="25" Height="25" Foreground="White"/>
+                    </Button>
+
+                    <Image Height="60" VerticalAlignment="Bottom"  Source="Ulrich_Christian.jpg" Width="75"/>
+                </Grid>
+                <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6"  Background="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="White" FontSize="14">
+                    <ListViewItem x:Name="ItemHome" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialdesign:PackIcon Kind="ViewDashboard" Height="25" Width="25" Margin="10" Foreground="White"/>
+                            <TextBlock Text="Company" VerticalAlignment="Center" Margin="20 10" Foreground="White"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="Account" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialdesign:PackIcon Kind="Bank" Height="25" Width="25" Margin="10" Foreground="White"/>
+                            <TextBlock Text="Account" VerticalAlignment="Center" Margin="20 10" Foreground="White"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60" PreviewMouseDown="NewBooking">
+                        <StackPanel Orientation="Horizontal">
+                            <materialdesign:PackIcon Kind="Book"  Height="25" Width="25" Margin="10" Foreground="White"/>
+                            <TextBlock Text="Booking" VerticalAlignment="Center"  Margin="20 10" Foreground="White"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialdesign:PackIcon Kind="Settings" Height="25" Width="25" Margin="10" Foreground="White"/>
+                            <TextBlock Text="Setting" VerticalAlignment="Center"  Margin="20 10" Foreground="White"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
 </Window>
