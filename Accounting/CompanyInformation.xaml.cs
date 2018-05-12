@@ -27,7 +27,7 @@ namespace Accounting
 
         private void NewCompany(object sender, RoutedEventArgs e)
         {
-            Company company = new Company();
+           Company company = new Company();
             foreach(var child in MainGrid.Children)
             {
                 if(child is TextBox)    // is == Operator for classes
